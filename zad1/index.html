@@ -3,13 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Sklep: dla ubranych</title>
+    <title>Groteska - Gry planszowe i białe kruki</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
 
     <header class="top-bar">
-      <h1>Sklep: dla ubranych</h1>
+      <h1>Groteska</h1>
       <nav class="nav-buttons">
         <button class="btn">Logowanie</button>
         <button class="btn">Koszyk</button>
@@ -22,54 +22,76 @@
         <section class="card">
           <h2>Filtry</h2>
           <form class="form-layout">
-            <label for="category">Kategoria:</label>
+            
+            <label for="search-desc">Szukaj w opisie:</label>
+            <input type="text" id="search-desc" name="search-desc" placeholder="np. smoki, kosmos..." />
+
+            <label for="category">Rodzaj gry:</label>
             <select id="category" name="category">
-              <option value="clothing">Ubrania</option>
-              <option value="shoes">Obuwie</option>
-              <option value="accessories">Akcesoria</option>
+              <option value="strategy">Strategiczne</option>
+              <option value="family">Rodzinne</option>
+              <option value="party">Imprezowe</option>
+              <option value="rpg">RPG / Fabularne</option>
             </select>
 
-            <label for="price-range">Zakres cen:</label>
-            <input type="range" id="price-range" name="price-range" min="0" max="500" />
+            <label for="players">Ilość graczy:</label>
+            <input type="number" id="players" name="players" min="1" max="12" placeholder="np. 4" />
+
+            <label for="publisher">Wydawnictwo:</label>
+            <input type="text" id="publisher" name="publisher" placeholder="np. Rebel, Galakta" />
+
+            <label for="play-time">Czas gry:</label>
+            <select id="play-time" name="play-time">
+              <option value="short">Do 30 min</option>
+              <option value="medium">30 - 90 min</option>
+              <option value="long">Powyżej 90 min</option>
+            </select>
+
+            <label>Zakres cen (PLN):</label>
+            <div class="price-inputs">
+              <input type="number" id="price-min" name="price-min" placeholder="Od" min="0" />
+              <span> - </span>
+              <input type="number" id="price-max" name="price-max" placeholder="Do" min="0" />
+            </div>
 
             <button type="submit" class="btn btn-success">Zastosuj filtry</button>
           </form>
         </section>
 
         <section class="card">
-          <h2>Dodaj produkt</h2>
+          <h2>Dodaj pozycję</h2>
           <form class="form-layout">
-            <label for="product-name">Nazwa produktu:</label>
+            <label for="product-name">Tytuł gry:</label>
             <input type="text" id="product-name" name="product-name" required />
 
             <label for="product-price">Cena (PLN):</label>
             <input type="number" id="product-price" name="product-price" required />
 
-            <button type="submit" class="btn btn-success">Dodaj produkt</button>
+            <button type="submit" class="btn btn-success">Dodaj grę</button>
           </form>
         </section>
       </aside>
 
       <section class="results">
-        <h2>Wyniki wyszukiwania</h2>
+        <h2>Dostępne tytuły</h2>
         <div class="products-grid">
           
           <article class="card">
-            <h3>Koszula</h3>
-            <p>Cena: 99 PLN</p>
+            <h3>Catan</h3>
+            <p>Cena: 180 PLN</p>
             <button class="btn">Dodaj do koszyka</button>
             <a href="index2.html" class="btn">Szczegóły</a>
           </article>
           
           <article class="card">
-            <h3>Spodnie</h3>
-            <p>Cena: 149 PLN</p>
+            <h3>Wsiąść do Pociągu</h3>
+            <p>Cena: 200 PLN</p>
             <button class="btn">Dodaj do koszyka</button>
           </article>
           
           <article class="card">
-            <h3>Buty</h3>
-            <p>Cena: 199 PLN</p>
+            <h3>Magia i Miecz (Biały Kruk)</h3>
+            <p>Cena: 650 PLN</p>
             <button class="btn">Dodaj do koszyka</button>
           </article>
 
@@ -79,7 +101,7 @@
     </main>
 
     <footer>
-      <p>&copy; 2026 Sklep dla ubranych</p>
+      <p>&copy; 2026 Sklep Groteska</p>
     </footer>
 
   </body>
