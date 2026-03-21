@@ -3,73 +3,84 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Kalkulator</title>
+    <title>Sklep: dla ubranych</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
-    <!-- Semantyczny HTLM od początku -->
-    <header>
-      <h1>Kalkulator</h1>
+
+    <header class="top-bar">
+      <h1>Sklep: dla ubranych</h1>
+      <nav class="nav-buttons">
+        <button class="btn">Logowanie</button>
+        <button class="btn">Koszyk</button>
+      </nav>
     </header>
 
-    <main>
-      <section class="calc-card">
-        <h2>Wprowadź działanie</h2>
-        <form action="#" onsubmit="return false;">
-          <div class="calc-inputs">
-            <label for="number-a">Liczba A:</label>
-            <input
-              type="text"
-              id="number-a"
-              placeholder="Wpisz liczbę"
-              class="calc-input"
-              aria-label="Liczba A"
-            />
-            <!-- ARIA-labels, oddzielny temat dostępność - można poczytać -->
+    <main class="container">
+      
+      <aside class="sidebar">
+        <section class="card">
+          <h2>Filtry</h2>
+          <form class="form-layout">
+            <label for="category">Kategoria:</label>
+            <select id="category" name="category">
+              <option value="clothing">Ubrania</option>
+              <option value="shoes">Obuwie</option>
+              <option value="accessories">Akcesoria</option>
+            </select>
 
-            <label for="number-b">Liczba B:</label>
-            <input
-              type="text"
-              id="number-b"
-              readonly
-              placeholder="Wpisz liczbę"
-              class="calc-input"
-              aria-label="Liczba B"
-            />
-          </div>
+            <label for="price-range">Zakres cen:</label>
+            <input type="range" id="price-range" name="price-range" min="0" max="500" />
 
-          <div class="calc-buttons">
-            <button class="calc-button calc-button-operator">+</button>
-            <button class="calc-button calc-button-operator">-</button>
-            <button class="calc-button calc-button-operator">*</button>
-            <button class="calc-button calc-button-operator">/</button>
-            <button class="calc-button">7</button>
-            <button class="calc-button">8</button>
-            <button class="calc-button">9</button>
-            <button class="calc-button">4</button>
-            <button class="calc-button">5</button>
-            <button class="calc-button">6</button>
-            <button class="calc-button">1</button>
-            <button class="calc-button">2</button>
-            <button class="calc-button">3</button>
-            <button class="calc-button">0</button>
-            <button class="calc-button calc-button-equals">=</button>
-          </div>
-        </form>
+            <button type="submit" class="btn btn-success">Zastosuj filtry</button>
+          </form>
+        </section>
+
+        <section class="card">
+          <h2>Dodaj produkt</h2>
+          <form class="form-layout">
+            <label for="product-name">Nazwa produktu:</label>
+            <input type="text" id="product-name" name="product-name" required />
+
+            <label for="product-price">Cena (PLN):</label>
+            <input type="number" id="product-price" name="product-price" required />
+
+            <button type="submit" class="btn btn-success">Dodaj produkt</button>
+          </form>
+        </section>
+      </aside>
+
+      <section class="results">
+        <h2>Wyniki wyszukiwania</h2>
+        <div class="products-grid">
+          
+          <article class="card">
+            <h3>Koszula</h3>
+            <p>Cena: 99 PLN</p>
+            <button class="btn">Dodaj do koszyka</button>
+            <a href="index2.html" class="btn">Szczegóły</a>
+          </article>
+          
+          <article class="card">
+            <h3>Spodnie</h3>
+            <p>Cena: 149 PLN</p>
+            <button class="btn">Dodaj do koszyka</button>
+          </article>
+          
+          <article class="card">
+            <h3>Buty</h3>
+            <p>Cena: 199 PLN</p>
+            <button class="btn">Dodaj do koszyka</button>
+          </article>
+
+        </div>
       </section>
 
-      <section class="history-card">
-        <h2>Historia</h2>
-        <!-- Ten tag "output" nie jest potrzebny, ale jest dobrą praktyką semantyczne HTMLa bo mówi, że TU SĄ WYNIKI -->
-        <output>
-          <ul>
-            <li>2 + 2 = 5</li>
-            <li>10 * 3 = 33</li>
-            <li>100 / 4 = 25</li>
-            <li>15 - 7 = 9</li>
-          </ul>
-        </output>
-      </section>
     </main>
+
+    <footer>
+      <p>&copy; 2026 Sklep dla ubranych</p>
+    </footer>
+
   </body>
 </html>
