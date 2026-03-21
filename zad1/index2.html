@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Koszula - Sklep: dla ubranych</title>
+    <title>Szczegóły: Koszula - Sklep: dla ubranych</title>
     <link rel="stylesheet" type="text/css" href="style.css" />
   </head>
   <body>
@@ -16,41 +16,24 @@
       </nav>
     </header>
 
-    <main class="container" style="grid-template-columns: 1fr;"> 
-      <article class="card product-details">
-        <a href="index.html" class="btn" style="display: inline-block; margin-bottom: 20px; text-decoration: none;">&larr; Wróć do sklepu</a>
+    <main class="container-single"> 
+      
+      <article class="card">
+        <a href="index.html" class="btn">Powrót do listy</a>
 
-        <div style="display: flex; gap: 30px; flex-wrap: wrap;">
+        <div class="product-details">
+          <h2>Koszula</h2>
+          <h3>Cena: 99 PLN</h3>
           
-          <div style="flex: 1; min-width: 250px; background-color: var(--app-bg); border-radius: var(--radius); display: flex; align-items: center; justify-content: center; min-height: 300px; border: 1px dashed var(--app-text-muted);">
-            <p style="color: var(--app-text-muted);">[Zdjęcie produktu]</p>
-          </div>
+          <p>Prosta, bawełniana koszula idealna na co dzień.</p>
+          
+          <ul>
+            <li>Materiał: Bawełna</li>
+            <li>Rozmiar: L</li>
+            <li>Stan: Nowy</li>
+          </ul>
 
-          <div style="flex: 1; min-width: 250px; display: flex; flex-direction: column; gap: 15px;">
-            <h2>Elegancka Koszula Męska</h2>
-            <p style="font-size: 1.5rem; font-weight: bold; color: var(--app-primary);">99 PLN</p>
-            
-            <p>Klasyczna biała koszula wykonana w 100% z wysokiej jakości bawełny. Idealna do biura, na spotkania biznesowe oraz ważne uroczystości. Zapewnia komfort przez cały dzień.</p>
-            
-            <ul>
-              <li><strong>Materiał:</strong> 100% Bawełna</li>
-              <li><strong>Krój:</strong> Slim Fit</li>
-              <li><strong>Kolor:</strong> Śnieżnobiały</li>
-            </ul>
-
-            <div style="margin-top: auto;">
-              <label for="size-select">Wybierz rozmiar:</label>
-              <select id="size-select" style="margin-bottom: 15px; width: 100%;">
-                <option value="s">S</option>
-                <option value="m">M</option>
-                <option value="l">L</option>
-                <option value="xl">XL</option>
-              </select>
-              
-              <button class="btn btn-success" style="width: 100%; font-size: 1.1rem; padding: 1rem;">Dodaj do koszyka</button>
-            </div>
-          </div>
-
+          <button class="btn btn-success">Dodaj do koszyka</button>
         </div>
       </article>
 
