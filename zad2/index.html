@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="pl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ToDo Lista</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+
+    <header class="top-bar">
+      <h1>ToDo Lista</h1>
+      <button id="undo-btn" class="btn btn-warning hidden">↩ Cofnij usunięcie</button>
+    </header>
+
+    <main class="container">
+
+      <aside class="sidebar">
+        <section class="card">
+          <h2>Dodaj zadanie</h2>
+          <div class="form-layout">
+            <label for="task-input">Treść:</label>
+            <input type="text" id="task-input" placeholder="Nowe zadanie..." />
+            <label for="list-select">Lista:</label>
+            <select id="list-select"></select>
+            <button id="add-btn" class="btn btn-success">Dodaj zadanie</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Nowa lista</h2>
+          <div class="form-layout">
+            <label for="new-list-input">Nazwa:</label>
+            <input type="text" id="new-list-input" placeholder="Nazwa listy..." />
+            <button id="add-list-btn" class="btn">Dodaj listę</button>
+          </div>
+        </section>
+
+        <section class="card">
+          <h2>Wyszukiwanie</h2>
+          <div class="form-layout">
+            <label for="search-input">Szukaj:</label>
+            <input type="text" id="search-input" placeholder="Wpisz frazę..." />
+            <label class="checkbox-label">
+              <input type="checkbox" id="case-insensitive" checked />
+              Ignoruj wielkość liter
+            </label>
+          </div>
+        </section>
+      </aside>
+
+      <section id="lists-container" class="lists-area"></section>
+
+    </main>
+
+    <dialog id="delete-modal">
+      <div class="modal-inner">
+        <p id="modal-text"></p>
+        <div class="modal-buttons">
+          <button id="modal-confirm" class="btn btn-danger">Tak, usuń</button>
+          <button id="modal-cancel" class="btn">Nie</button>
+        </div>
+      </div>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
