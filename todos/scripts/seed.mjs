@@ -6,15 +6,10 @@ import {
   serverTimestamp,
   setDoc,
 } from "firebase/firestore";
+import { getFirebaseConfig, loadEnvLocal } from "./loadEnv.mjs";
 
-const firebaseConfig = {
-  apiKey: "REMOVED",
-  authDomain: "piwo-f950d.firebaseapp.com",
-  projectId: "piwo-f950d",
-  storageBucket: "piwo-f950d.firebasestorage.app",
-  messagingSenderId: "206427511681",
-  appId: "1:206427511681:web:11000b972aa59fdf3aa680",
-};
+loadEnvLocal();
+const firebaseConfig = getFirebaseConfig();
 
 const API_URL = "https://szandala.github.io/piwo-api/board-games.json";
 
