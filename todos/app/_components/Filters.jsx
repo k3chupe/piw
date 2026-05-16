@@ -25,7 +25,7 @@ export default function Filters({
           <select
             value={typeFilter}
             onChange={(e) => onTypeChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           >
             <option value="">wszystkie</option>
@@ -41,7 +41,7 @@ export default function Filters({
           <select
             value={expansionFilter}
             onChange={(e) => onExpansionChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           >
             <option value="all">wszystkie</option>
@@ -59,7 +59,7 @@ export default function Filters({
             step={0.01}
             value={priceMin}
             onChange={(e) => onPriceMinChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           />
         </label>
@@ -73,7 +73,7 @@ export default function Filters({
             step={0.01}
             value={priceMax}
             onChange={(e) => onPriceMaxChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           />
         </label>
@@ -86,7 +86,7 @@ export default function Filters({
             min={1}
             value={playersMin}
             onChange={(e) => onPlayersMinChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           />
         </label>
@@ -99,7 +99,7 @@ export default function Filters({
             min={1}
             value={playersMax}
             onChange={(e) => onPlayersMaxChange(e.target.value)}
-            disabled={disabled}
+            disabled={Boolean(disabled)}
             className="rounded-lg border border-zinc-300 bg-white px-3 py-2 text-zinc-900 dark:border-zinc-600 dark:bg-zinc-900 dark:text-zinc-100"
           />
         </label>

@@ -1,0 +1,26 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    match /games/{gameId} {
+      allow read: if true;
+
+      allow create: if request.auth != null
+        && request.resource.data.ownerId == request.auth.uid;
+
+      allow update: if request.auth != null
+        && request.auth.uid == resource.data.ownerId;
+
+      allow update: if request.auth != null
+        && resource.data.status == 'available'
+        && request.resource.data.status == 'sold'
+        && request.resource.data.soldBy == request.auth.uid;
+
+      allow update: if request.auth != null
+        && resource.data.status == 'available'
+        && resource.data.auction != null;
+
+      allow delete: if request.auth != null
+        && request.auth.uid == resource.data.ownerId;
+    }
+  }
+}

@@ -1,18 +1,22 @@
 # PIWO – zadanie 3 (gry planszowe)
 
-Aplikacja w Next.js (App Router, JavaScript, Tailwind). Lista gier z JSON-a prowadzącego, wyszukiwanie, filtry, paginacja, szczegóły, dodawanie i edycja w pamięci przeglądarki.
+Aplikacja Next.js z Firebase (Auth + Firestore). Lista ogłoszeń, filtry, paginacja, logowanie, CRUD, kupno i licytacja.
 
 ## Uruchomienie
 
-Z katalogu `todos` w repozytorium:
+Z katalogu `todos`:
 
 ```bash
 npm install
 npm run dev
 ```
 
-Potem w przeglądarce: http://localhost:3000
+http://localhost:3000
 
-Inne polecenia: `npm run build`, `npm run start`, `npm run lint`.
+Import przykładowych gier z API prowadzącego (wymaga skonfigurowanego Firebase):
 
-Więcej opisu działania i uwag (PATH pod Windows, git): [USAGE.md](USAGE.md). Struktura techniczna: [ARCHITECTURE.md](ARCHITECTURE.md).
+```bash
+npm run seed
+```
+
+Inne: `npm run build`, `npm run start`, `npm run lint`.

@@ -1,4 +1,3 @@
-/** Bazowy adres API – ścieżki w JSON są względne (np. img/catan.webp). */
 export const PIWO_API_BASE = "https://szandala.github.io/piwo-api/";
 
 export function imageUrlFromApiPath(path) {

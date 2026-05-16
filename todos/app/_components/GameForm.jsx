@@ -12,6 +12,7 @@ const defaults = {
   is_expansion: false,
   price_pln: "",
   type: "",
+  enableAuction: false,
 };
 
 export default function GameForm({
@@ -19,6 +20,8 @@ export default function GameForm({
   types = [],
   onSubmit,
   submitLabel = "Zapisz",
+  disabled = false,
+  showAuctionOption = false,
 }) {
   const [values, setValues] = useState(defaults);
   const [error, setError] = useState("");
@@ -41,6 +44,7 @@ export default function GameForm({
       price_pln:
         initialGame.price_pln != null ? String(initialGame.price_pln) : "",
       type: initialGame.type ?? "",
+      enableAuction: Boolean(initialGame.auction),
     });
   }, [initialGame]);
 
@@ -90,7 +94,7 @@ export default function GameForm({
       price_pln: price,
       type: values.type.trim() || "bez kategorii",
       images: initialGame?.images ?? [],
-      auction: initialGame?.auction ?? null,
+      enableAuction: values.enableAuction,
     });
   }
 
@@ -202,13 +206,28 @@ export default function GameForm({
           inputMode="decimal"
           value={values.price_pln}
           onChange={(e) => handleChange("price_pln", e.target.value)}
+          disabled={disabled}
           className="rounded-lg border border-zinc-300 px-3 py-2 dark:border-zinc-600 dark:bg-zinc-950 dark:text-zinc-100"
         />
       </label>
 
+      {showAuctionOption ? (
+        <label className="flex items-center gap-2 text-sm">
+          <input
+            type="checkbox"
+            checked={values.enableAuction}
+            onChange={(e) => handleChange("enableAuction", e.target.checked)}
+            disabled={disabled}
+            className="h-4 w-4 rounded border-zinc-300"
+          />
+          <span>Wystaw na licytację (cena wywoławcza)</span>
+        </label>
+      ) : null}
+
       <button
         type="submit"
-        className="rounded-lg bg-zinc-900 px-4 py-2.5 font-medium text-white hover:bg-zinc-800 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
+        disabled={disabled}
+        className="rounded-lg bg-zinc-900 px-4 py-2.5 font-medium text-white hover:bg-zinc-800 disabled:opacity-50 dark:bg-zinc-100 dark:text-zinc-900 dark:hover:bg-white"
       >
         {submitLabel}
       </button>
